@@ -5,12 +5,19 @@ $('.dropdown-toggle').click(function(){
 });
 
 $('.arrow-next').click(function(){
+    var current_slide = $('.active-slide');
+    var next_slide = current_slide.next();
     var current_dot = $('.active-dot');
     var next_dot = current.next();
-    if(next_dot == 0)
+    if(next_slide.length === 0)
+    {
+        next_slide = $('.slide').first();
         next_dot = $('.dot').first();
-    current_dot.removeClass('active');
-    next_dot.addClass('active');
+    }   
+    currentSlide.fadeOut(500).removeClass('active-slide');
+    nextSlide.fadeIn(500).addClass('active-slide');
+    current_dot.removeClass('active-dot');
+    next_dot.addClass('active-dot');
     
 });
 };
